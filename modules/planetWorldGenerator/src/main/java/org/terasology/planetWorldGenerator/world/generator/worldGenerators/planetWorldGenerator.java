@@ -1,7 +1,10 @@
 package org.terasology.planetWorldGenerator.world.generator.worldGenerators;
 import org.terasology.core.world.generator.facetProviders.SeaLevelProvider;
 import org.terasology.engine.SimpleUri;
+import org.terasology.planetWorldGenerator.world.generator.facetProviders.LakesProvider;
+import org.terasology.planetWorldGenerator.world.generator.facetProviders.MountainsProvider;
 import org.terasology.planetWorldGenerator.world.generator.facetProviders.PlanetProvider;
+import org.terasology.planetWorldGenerator.world.generator.rasterizers.LakesRasterizer;
 import org.terasology.planetWorldGenerator.world.generator.rasterizers.PlanetRasterizer;
 import org.terasology.registry.In;
 import org.terasology.world.generation.BaseFacetedWorldGenerator;
@@ -24,6 +27,8 @@ public class planetWorldGenerator extends BaseFacetedWorldGenerator {
         return new WorldBuilder(worldGeneratorPluginLibrary)
                 .addProvider(new PlanetProvider())
                 .addProvider(new SeaLevelProvider(0))
-                .addRasterizer(new PlanetRasterizer());
+                .addRasterizer(new PlanetRasterizer())
+                .addProvider(new MountainsProvider())
+                .addPlugins();
     }
 }
