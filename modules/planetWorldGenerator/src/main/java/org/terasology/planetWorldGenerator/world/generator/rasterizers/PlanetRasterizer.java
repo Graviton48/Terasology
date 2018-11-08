@@ -32,10 +32,10 @@ public class PlanetRasterizer implements WorldRasterizer {
             if (position.y < surfaceHeight){
                 chunk.setBlock(ChunkMath.calcBlockPos(position), snow);
             }
-            else if (position.y < surfaceHeight - 50) {
+            else if (position.y < surfaceHeight - 2) {
                 chunk.setBlock(ChunkMath.calcBlockPos(position), grass);
             }
-            else if (position.y < surfaceHeight - 100) {
+            else if (position.y < surfaceHeight - 4) {
                 chunk.setBlock(ChunkMath.calcBlockPos(position), dirt);
             }
         }
